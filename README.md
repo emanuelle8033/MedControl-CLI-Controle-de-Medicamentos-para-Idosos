@@ -65,7 +65,3 @@ Este projeto foi pensado principalmente para:
 - unittest (testes automatizados)
 - Git e GitHub
 - GitHub Actions (Integração Contínua)
-
----
-
-## 📂 Estrutura do Projeto
