@@ -18,5 +18,4 @@ jobs:
       - name: Rodar lint
         run: flake8 src
       - name: Rodar testes
-        run: pytestRodar testes
         run: pytest
