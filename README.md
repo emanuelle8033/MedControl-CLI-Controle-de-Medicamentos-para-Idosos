@@ -115,4 +115,4 @@ Este projeto utiliza versionamento semântico:
 
 ## 👩‍💻 Autora
 
-*Emanuelle Almeida de Freitas*
+Emanuelle Almeida de Freitas
