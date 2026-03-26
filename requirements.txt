@@ -1,0 +1,12 @@
+# ===============================
+# MedControl - Dependências
+# ===============================
+
+# Framework Web
+flask==3.0.0
+
+# Testes automatizados
+pytest==8.2.0
+
+# Lint (qualidade de código)
+flake8==7.0.0
