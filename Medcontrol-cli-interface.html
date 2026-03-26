@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MedControl - Interface Web</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f5f7fa;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .container {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        width: 420px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 8px;
+        background: #4CAF50;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        margin-bottom: 10px;
+    }
+
+    button:hover {
+        background: #43a047;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    li {
+        background: #f1f3f6;
+        padding: 10px;
+        border-radius: 8px;
+        margin-bottom: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .delete-btn {
+        background: #e53935;
+        padding: 5px 10px;
+        border-radius: 6px;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>💊 MedControl</h1>
+
+    <input type="text" id="nome" placeholder="Nome do medicamento">
+    <input type="time" id="horario">
+
+    <button onclick="adicionarMedicamento()">Adicionar medicamento</button>
+
+    <ul id="listaMedicamentos"></ul>
+</div>
+
+<script>
+
+// URL da API Python (Flask)
+const API_URL = "http://127.0.0.1:5000";
+
+async function carregarMedicamentos() {
+    const resposta = await fetch(`${API_URL}/medicamentos`);
+    const dados = await resposta.json();
+
+    const lista = document.getElementById("listaMedicamentos");
+    lista.innerHTML = "";
+
+    dados.forEach((med, index) => {
+        const item = document.createElement("li");
+        item.innerHTML = `
+            ${med.nome} - ${med.horario}
+            <button class='delete-btn' onclick='removerMedicamento("${med.nome}")'>Excluir</button>
+        `;
+        lista.appendChild(item);
+    });
+}
+
+async function adicionarMedicamento() {
+    const nome = document.getElementById("nome").value;
+    const horario = document.getElementById("horario").value;
+
+    if (!nome || !horario) {
+        alert("Preencha todos os campos");
+        return;
+    }
+
+    await fetch(`${API_URL}/medicamentos`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ nome, horario })
+    });
+
+    document.getElementById("nome").value = "";
+    document.getElementById("horario").value = "";
+
+    carregarMedicamentos();
+}
+
+async function removerMedicamento(nome) {
+    await fetch(`${API_URL}/medicamentos/${nome}`, {
+        method: "DELETE"
+    });
+
+    carregarMedicamentos();
+}
+
+// carregar automaticamente ao abrir a página
+carregarMedicamentos();
+
+</script>
+
+</body>
+</html>

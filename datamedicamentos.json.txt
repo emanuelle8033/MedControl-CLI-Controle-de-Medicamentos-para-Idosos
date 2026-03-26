@@ -1,0 +1,34 @@
+[
+    {
+        "nome": "Dipirona",
+        "horario": "08:00"
+    },
+    {
+        "nome": "Paracetamol",
+        "horario": "12:00"
+    },
+    {
+        "nome": "Amoxicilina",
+        "horario": "14:00"
+    },
+    {
+        "nome": "Ibuprofeno",
+        "horario": "18:00"
+    },
+    {
+        "nome": "Losartana",
+        "horario": "07:00"
+    },
+    {
+        "nome": "Omeprazol",
+        "horario": "06:30"
+    },
+    {
+        "nome": "Vitamina D",
+        "horario": "09:00"
+    },
+    {
+        "nome": "Metformina",
+        "horario": "20:00"
+    }
+]
