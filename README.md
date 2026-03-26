@@ -80,33 +80,6 @@ Este projeto foi pensado principalmente para:
 
   ---
 
-## ▶️ Como Executar o Projeto
-*1. Clonar o repositório*
-
-git clone https://github.com/emanuelle8033/MedControl-CLI-Controle-de-Medicamentos-para-Idosos.git
-
-*2. Entrar na pasta*
-
-cd medcontrol-cli
-
-*3. Instalar dependências*
-
-pip install -r requirements.txt
-
-*4. Executar o servidor Python*
-
-python src/app.py
-
-Depois disso aparecerá:
-
-Running on http://127.0.0.1:5000
-
-*5. Abrir a interface Web*
-
-Abra o arquivo:
-
-medcontrol-cli-interface.html
-
 ## 🔢 Versionamento
 
 Este projeto utiliza versionamento semântico:
