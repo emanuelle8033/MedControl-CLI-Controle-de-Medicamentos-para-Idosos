@@ -77,3 +77,9 @@ Este projeto foi pensado principalmente para:
 - Git e GitHub
 - GitHub Actions (CI/CD)
 - HTML + JavaScript
+
+  ---
+
+## ▶️ Como Executar o Projeto
+*1. Clonar o repositório*
+git clone https://github.com/SEU-USUARIO/medcontrol-cli.git
