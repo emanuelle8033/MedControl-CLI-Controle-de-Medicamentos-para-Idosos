@@ -2,9 +2,17 @@
 
 ## 📌 Sobre o Projeto
 
-O **MedControl CLI** é uma aplicação simples em linha de comando (CLI) desenvolvida com o objetivo de ajudar idosos, cuidadores e familiares a controlarem o uso correto de medicamentos no dia a dia.
+O MedControl é uma aplicação desenvolvida para ajudar idosos, cuidadores e familiares a controlarem o uso correto de medicamentos no dia a dia.
 
-O projeto foi desenvolvido como parte de um desafio prático individual com foco em boas práticas de desenvolvimento de software, incluindo versionamento, testes automatizados, documentação e integração contínua.
+O projeto começou como uma aplicação simples em linha de comando (CLI) e evoluiu para uma versão mais completa, que também possui interface Web em HTML integrada ao Python (Flask).
+
+Este projeto foi desenvolvido como parte de um desafio prático individual, com foco em boas práticas de desenvolvimento de software, incluindo:
+
+- versionamento com Git
+- testes automatizados
+- documentação profissional
+- integração contínua com GitHub Actions
+- organização de projeto em padrão profissional
 
 ---
 
@@ -23,14 +31,15 @@ Esses problemas podem comprometer o tratamento médico, causar riscos à saúde 
 
 ## 💡 Solução Proposta
 
-A aplicação **MedControl CLI** permite que o usuário registre e acompanhe seus medicamentos de forma simples e rápida, diretamente pelo terminal.
+O MedControl permite que o usuário registre e acompanhe seus medicamentos de forma simples, rápida e acessível.
 
-Com essa ferramenta é possível:
+Com essa aplicação é possível:
 
-- cadastrar medicamentos com horário;
-- visualizar todos os medicamentos cadastrados;
-- marcar medicamentos como tomados;
-- armazenar os dados em arquivo para uso contínuo.
+- cadastrar medicamentos com horário
+- visualizar todos os medicamentos cadastrados
+- remover medicamentos
+- salvar automaticamente em arquivo JSON
+- utilizar tanto terminal (CLI) quanto interface Web (HTML)
 
 Mesmo sendo uma aplicação simples, ela resolve uma dor real e pode ser facilmente utilizada por estudantes, cuidadores ou familiares que queiram ajudar no controle de medicamentos de idosos.
 
@@ -60,8 +69,11 @@ Este projeto foi pensado principalmente para:
 
 ## 🛠️ Tecnologias Utilizadas
 
-- Python 3
+- Python 3.11
+- Flask
 - JSON (armazenamento de dados)
-- unittest (testes automatizados)
+- Pytest (testes automatizados)
+- Flake8 (linting)
 - Git e GitHub
-- GitHub Actions (Integração Contínua)
+- GitHub Actions (CI/CD)
+- HTML + JavaScript
