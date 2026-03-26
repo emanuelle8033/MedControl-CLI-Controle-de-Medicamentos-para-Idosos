@@ -1,4 +1,4 @@
-name: CI - MedControl
+name: CI - app
 
 on:
   push:
