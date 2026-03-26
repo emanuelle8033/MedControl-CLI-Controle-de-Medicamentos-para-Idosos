@@ -31,7 +31,7 @@ Esses problemas podem comprometer o tratamento médico, causar riscos à saúde 
 
 ## 💡 Solução Proposta
 
-O MedControl permite que o usuário registre e acompanhe seus medicamentos de forma simples, rápida e acessível.
+O MedControl permite que o usuário registre e acompanhe seus medicamentos de forma simples, rápida e acessível
 
 Com essa aplicação é possível:
 
