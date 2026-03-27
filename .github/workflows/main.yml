@@ -1,38 +1,28 @@
-name: CI - MedControl CLI
+name: Node CI
 
 on:
   push:
-    branches: [ main ]
   pull_request:
-    branches: [ main ]
 
 jobs:
   test:
+
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Baixar o código do repositório
-      - name: Checkout do projeto
+      - name: Baixar código
         uses: actions/checkout@v3
 
-      # 2. Instalar Python
-      - name: Configurar Python
-        uses: actions/setup-python@v4
+      - name: Instalar Node
+        uses: actions/setup-node@v3
         with:
-          python-version: 3.11
+          node-version: 18
 
-      # 3. Atualizar pip
-      - name: Atualizar pip
-        run: python -m pip install --upgrade pip
-
-      # 4. Instalar dependências
       - name: Instalar dependências
-        run: pip install -r requirements.txt
+        run: npm install
 
-      # 5. Rodar o lint (qualidade do código)
-      - name: Rodar flake8
-        run: flake8 src
+      - name: Rodar lint
+        run: npm run lint
 
-      # 6. Rodar testes automatizados
-      - name: Rodar testes com pytest
-        run: pytest
+      - name: Rodar testes
+        run: npm test
