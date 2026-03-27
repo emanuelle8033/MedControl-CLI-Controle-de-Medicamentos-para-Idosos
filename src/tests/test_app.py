@@ -1,25 +1,33 @@
-from app import (
-    adicionar_medicamento,
-    listar_medicamentos,
-    remover_medicamento,
-)
+from src.app import carregar_dados, salvar_dados
 
 
-def test_adicionar_medicamento():
-    adicionar_medicamento("Dipirona", "08:00")
-    meds = listar_medicamentos()
-
-    assert any(m["nome"] == "Dipirona" for m in meds)
+def test_carregar_dados_retorna_lista():
+    dados = carregar_dados()
+    assert isinstance(dados, list)
 
 
-def test_remover_medicamento():
-    adicionar_medicamento("Paracetamol", "10:00")
-    remover_medicamento("Paracetamol")
+def test_salvar_dados_funciona():
+    dados_teste = [
+        {
+            "nome": "Dipirona",
+            "horario": "08:00"
+        }
+    ]
 
-    meds = listar_medicamentos()
-    assert not any(m["nome"] == "Paracetamol" for m in meds)
+    salvar_dados(dados_teste)
+    dados = carregar_dados()
+
+    assert dados == dados_teste
 
 
-def test_listar_retorna_lista():
-    meds = listar_medicamentos()
-    assert isinstance(meds, list)
+def test_salvar_e_ler_varios_medicamentos():
+    dados_teste = [
+        {"nome": "Dipirona", "horario": "08:00"},
+        {"nome": "Paracetamol", "horario": "12:00"},
+        {"nome": "Omeprazol", "horario": "07:00"}
+    ]
+
+    salvar_dados(dados_teste)
+    dados = carregar_dados()
+
+    assert len(dados) == 3
