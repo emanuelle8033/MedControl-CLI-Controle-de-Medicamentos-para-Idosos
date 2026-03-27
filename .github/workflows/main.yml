@@ -3,7 +3,7 @@ name: CI - MedControl CLI
 on:
   push:
   pull_request:
-
+  
 jobs:
   test:
     runs-on: ubuntu-latest
