@@ -1,4 +1,4 @@
-from src.app import (
+from app import (
     adicionar_medicamento,
     listar_medicamentos,
     remover_medicamento,
